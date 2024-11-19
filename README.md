@@ -1,4 +1,4 @@
-# Migrating bot accounts from botsin.space
+# Mastodon Account Migration Tool
 
 1. Create your new acconts. If you're an admin of the server, you can use the [tootctl](https://docs.joinmastodon.org/admin/tootctl/) command line tool to create the account, and also approve it.
 
