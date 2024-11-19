@@ -13,9 +13,7 @@ If necessary, you can also reset the account's password.
 tootctl accounts modify USERNAME --reset-password
 ```
 
-2. Sign in to each of the new accounts and create a [new app](https://botwiki.org/resource/tutorial/how-to-make-a-mastodon-botsin-space-app-bot/). Save the API token for each account.
-
-3. Rename `accounts-example.csv` to `accounts.csv` and update the list of accounts with usernames and passwords for "migrating from" and "migrating to" servers. You can leave the MIGRATED and TOKEN columns empty, the migration script will fill these out for you.
+2. Rename `accounts-example.csv` to `accounts.csv` and update the list of accounts with usernames and passwords for "migrating from" and "migrating to" servers. You can leave the MIGRATED and TOKEN columns empty, the migration script will fill these out for you.
 
 ```
 ACCOUNT,EMAIL,PASSWORD_FROM,PASSWORD_TO,MIGRATED,TOKEN
@@ -26,13 +24,13 @@ bot3,bot3@gmail.com,*****,*****,,
 
 This file will be overwritten during the migration process, marking each bot as migrated, so you will be able to resume later if needed. Please also consider making a backup of your `accounts.csv` file before you begin.
 
-4. Install project dependencies.
+3. Install project dependencies.
 
 ```sh
 npm install
 ```
 
-5. Finally, run the migration script. This will copy the name, description, and profile fields between each of the migrating accounts.
+4. Finally, run the migration script. This will copy the name, description, and profile fields between each of the migrating accounts.
 
 ```sh
 npm run migrate -- --from=SERVER1.SOCIAL --to=SERVER2.SOCIAL
