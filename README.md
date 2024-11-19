@@ -45,7 +45,7 @@ For example, if you're migrating your accounts from `botsin.space` to `stefanboh
 npm run migrate -- --from=botsin.space --to=stefanbohacek.online
 ```
 
-Optionally you you can also pass the `--delete_old_posts` parameter to set up automatic deletion of old posts.
+Optionally you you can also pass the `--delete_old_posts` parameter to set up automatic deletion of old posts for the new accounts. (The old accounts from which you're migrating will not be affected.)
 
 ```sh
 npm run migrate -- --from=SERVER1.SOCIAL --to=SERVER2.SOCIAL --delete_old_posts
