@@ -1,0 +1,4 @@
+ACCOUNT,EMAIL,PASSWORD_FROM,PASSWORD_TO,MIGRATED,TOKEN
+bot1,bot1@gmail.com,*****,*****,,
+bot2,bot2@gmail.com,*****,*****,,
+bot3,bot3@gmail.com,*****,*****,,

@@ -1,0 +1,38 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "contributors": [],
+  "scripts": {
+    "migrate": "node index.js",
+    "dev": "",
+    "test": ""
+  },
+  "dependencies": {
+    "command-line-args": "^6.0.1",
+    "csv": "^6.3.10",
+    "nodejs-file-downloader": "^4.13.0",
+    "puppeteer": "^23.8.0",
+    "string-strip-html": "^13.4.8"
+  }
+}
