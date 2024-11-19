@@ -1,13 +1,13 @@
 # Mastodon Account Migration Tool
 
-1. Create your new acconts. If you're an admin of the server, you can use the [tootctl](https://docs.joinmastodon.org/admin/tootctl/) command line tool to create the account, and also approve it.
+1. Register accounts on the new server for each of the accounts you're migrating. If you're an admin of the server to which you're migrating, you can use the [tootctl](https://docs.joinmastodon.org/admin/tootctl/) command line tool to create the account, and also approve it.
 
 ```sh
 tootctl accounts create USERNAME --email EMAIL --confirmed
 tootctl accounts modify USERNAME --approve
 ```
 
-If necessary, you can also reset the account's password.
+If necessary, you can also reset an account's password.
 
 ```sh
 tootctl accounts modify USERNAME --reset-password
@@ -17,12 +17,12 @@ tootctl accounts modify USERNAME --reset-password
 
 ```
 ACCOUNT,EMAIL,PASSWORD_FROM,PASSWORD_TO,MIGRATED,TOKEN
-bot1,bot1@gmail.com,*****,*****,,
-bot2,bot2@gmail.com,*****,*****,,
-bot3,bot3@gmail.com,*****,*****,,
+account1,account1@gmail.com,*****,*****,,
+account2,account2@gmail.com,*****,*****,,
+account3,account3@gmail.com,*****,*****,,
 ```
 
-This file will be overwritten during the migration process, marking each bot as migrated, so you will be able to resume later if needed. Please also consider making a backup of your `accounts.csv` file before you begin.
+This file will be overwritten during the migration process, marking each account as migrated, so you will be able to resume later if needed. Please also consider making a backup of your `accounts.csv` file before you begin.
 
 3. Install project dependencies.
 
@@ -30,13 +30,16 @@ This file will be overwritten during the migration process, marking each bot as 
 npm install
 ```
 
-4. Finally, run the migration script. This will copy the name, description, and profile fields between each of the migrating accounts.
+4. Finally, run the migration script. This will
+
+- copy the name, description, and profile fields between each of the migrating accounts
+- set up a new app with `write` permission for each of the accounts and save the token in the `accounts.csv` file
 
 ```sh
 npm run migrate -- --from=SERVER1.SOCIAL --to=SERVER2.SOCIAL
 ```
 
-For example, if you're migrating your bots from `botsin.space` to `stefanbohacek.online`, you'd run:
+For example, if you're migrating your accounts from `botsin.space` to `stefanbohacek.online`, you'd run:
 
 ```sh
 npm run migrate -- --from=botsin.space --to=stefanbohacek.online
@@ -58,4 +61,3 @@ This will delete all posts older than 2 weeks, other than:
 - posts with at least 3 favorites or 3 boosts
 
 To customize these options, look for `if (options.delete_old_posts)` inside the `modules/migrateAccount.js` file.
-
