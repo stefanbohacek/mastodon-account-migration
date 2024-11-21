@@ -61,3 +61,20 @@ This will delete all posts older than 2 weeks, other than:
 - posts with at least 3 favorites or 3 boosts
 
 To customize these options, look for `if (options.delete_old_posts)` inside the `modules/migrateAccount.js` file.
+
+
+## Extras
+
+### Mass-follow a specific account
+
+```sh
+npm run follow -- --server=stefanbohacek.online --account=@bsky.brid.gy@bsky.brid.gyss
+```
+
+### Boost a post as an announcement to all bot followers
+
+Note: This feature is experimental and currently works only if the status you're boosting is on the same server as all your bots.
+
+```sh
+npm run announce -- --status=https://stefanbohacek.online/@stefan/113516500422769407 
+```

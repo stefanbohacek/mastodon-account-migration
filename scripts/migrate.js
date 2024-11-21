@@ -1,7 +1,7 @@
 import fs from "fs";
-import loadAccounts from "./modules/loadAccounts.js";
-import migrateAccount from "./modules/migrateAccount.js";
 import commandLineArgs from "command-line-args";
+import loadAccounts from "../modules/loadAccounts.js";
+import migrateAccount from "../modules/migrateAccount.js";
 
 const options = commandLineArgs([
   { name: "from", type: String },

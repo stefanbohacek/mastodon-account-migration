@@ -1,7 +1,7 @@
 import { stripHtml } from "string-strip-html";
 
 export default async (account, fromServer) => {
-  console.log(`fetching account info for @${account[0]}@${fromServer}...`);
+  console.log(`fetching account info for ${account[0]}@${fromServer}...`);
   let accountData = {};
 
   try {

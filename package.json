@@ -24,7 +24,9 @@
   },
   "contributors": [],
   "scripts": {
-    "migrate": "node index.js",
+    "migrate": "node ./scripts/migrate.js",
+    "follow": "node ./scripts/follow.js",
+    "announce": "node ./scripts/announce.js",
     "dev": "",
     "test": ""
   },
