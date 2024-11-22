@@ -26,6 +26,7 @@
   "scripts": {
     "migrate": "node ./scripts/migrate.js",
     "follow": "node ./scripts/follow.js",
+    "block": "node ./scripts/block.js",
     "announce": "node ./scripts/announce.js",
     "dev": "",
     "test": ""

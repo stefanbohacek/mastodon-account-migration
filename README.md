@@ -70,6 +70,11 @@ To customize these options, look for `if (options.delete_old_posts)` inside the 
 ```sh
 npm run follow -- --server=stefanbohacek.online --account=@bsky.brid.gy@bsky.brid.gyss
 ```
+### Mass-block a specific account
+
+```sh
+npm run block -- --server=stefanbohacek.online --account=@badguy@fediverse.social
+```
 
 ### Boost a post as an announcement to all bot followers
 
