@@ -68,7 +68,7 @@ To customize these options, look for `if (options.delete_old_posts)` inside the 
 ### Mass-follow a specific account
 
 ```sh
-npm run follow -- --server=stefanbohacek.online --account=@bsky.brid.gy@bsky.brid.gyss
+npm run follow -- --server=stefanbohacek.online --account=@bsky.brid.gy@bsky.brid.gy
 ```
 ### Mass-block a specific account
 
