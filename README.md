@@ -81,5 +81,5 @@ npm run block -- --server=stefanbohacek.online --account=@badguy@fediverse.socia
 Note: This feature is experimental and currently works only if the status you're boosting is on the same server as all your bots.
 
 ```sh
-npm run announce -- --status=https://stefanbohacek.online/@stefan/113516500422769407 
+npm run announce -- --status=https://stefanbohacek.online/@stefan/113516500422769407 --skip=botwikirandom,botwikirandomfediverse,newonbotwiki
 ```
