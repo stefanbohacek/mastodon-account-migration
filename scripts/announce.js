@@ -30,5 +30,7 @@ const options = commandLineArgs([
         }
       }
     }
+    console.log("finished!");
+    return true;
   }
 })();

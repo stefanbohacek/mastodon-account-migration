@@ -65,6 +65,12 @@ To customize these options, look for `if (options.delete_old_posts)` inside the 
 
 ## Extras
 
+### Request archive for your migrated bots
+
+```sh
+npm run request_archive -- --server=botsin.space
+```
+
 ### Mass-follow a specific account
 
 ```sh

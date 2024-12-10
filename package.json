@@ -28,6 +28,7 @@
     "follow": "node ./scripts/follow.js",
     "block": "node ./scripts/block.js",
     "announce": "node ./scripts/announce.js",
+    "request_archive": "node ./scripts/requestArchive.js",
     "dev": "",
     "test": ""
   },
