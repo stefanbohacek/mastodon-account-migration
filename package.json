@@ -26,9 +26,11 @@
   "scripts": {
     "migrate": "node ./scripts/migrate.js",
     "follow": "node ./scripts/follow.js",
+    "unfollow": "node ./scripts/unfollow.js",
     "block": "node ./scripts/block.js",
     "announce": "node ./scripts/announce.js",
     "request_archive": "node ./scripts/requestArchive.js",
+    "purge": "node ./scripts/purge.js",
     "dev": "",
     "test": ""
   },

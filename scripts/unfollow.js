@@ -1,7 +1,7 @@
 import commandLineArgs from "command-line-args";
 import getAccountInfo from "../modules/getAccountInfo.js";
 import loadAccounts from "../modules/loadAccounts.js";
-import follow from "../modules/follow.js";
+import unfollow from "../modules/unfollow.js";
 import sleep from "../modules/sleep.js";
 
 const options = commandLineArgs([
@@ -14,13 +14,13 @@ const options = commandLineArgs([
   console.log(options);
   if (!options.server || !options.account) {
     console.log(
-      "usage: npm run follow -- --server=SERVER.SOCIAL --account=@USER@SERVER.SOCIAL"
+      "usage: npm run unfollow -- --server=SERVER.SOCIAL --account=@USER@SERVER.SOCIAL"
     );
   } else {
     const skipAccounts = options?.skip?.split(",") || [];
-    const accountToFollow = options.account;
-    const accountToFollowData = await getAccountInfo(
-      [accountToFollow],
+    const accountToUnfollow = options.account;
+    const accountToUnfollowData = await getAccountInfo(
+      [accountToUnfollow],
       options.server
     );
     const accounts = await loadAccounts();
@@ -29,7 +29,7 @@ const options = commandLineArgs([
       if (index > 0) {
         if (skipAccounts.length === 0 || !skipAccounts.includes(account[0])) {
           // console.log(account);
-          await follow(account, accountToFollowData, options.server);
+          await unfollow(account, accountToUnfollowData, options.server);
           await sleep(2000);
         } else {
           console.log(`skipping ${account[0]}...`);

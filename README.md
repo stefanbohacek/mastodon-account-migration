@@ -22,6 +22,15 @@ account2,account2@gmail.com,*****,*****,,
 account3,account3@gmail.com,*****,*****,,
 ```
 
+For example, for an account `mycoolbot@server1.social` with a password `password123` on the old server and password `password321` on the new server (these may be the same!) that I registered using email `mcbemail@email.com`, it would look like this:
+
+```
+ACCOUNT,EMAIL,PASSWORD_FROM,PASSWORD_TO,MIGRATED,TOKEN
+mycoolbot,mcbemail@email.com,password123,password321,,
+```
+
+Note the extra two commas at the end, this is fine!
+
 This file will be overwritten during the migration process, marking each account as migrated, so you will be able to resume later if needed. Please also consider making a backup of your `accounts.csv` file before you begin.
 
 3. Install project dependencies.
@@ -71,10 +80,11 @@ To customize these options, look for `if (options.delete_old_posts)` inside the 
 npm run request_archive -- --server=botsin.space
 ```
 
-### Mass-follow a specific account
+### Mass-(un)follow a specific account
 
 ```sh
-npm run follow -- --server=stefanbohacek.online --account=@bsky.brid.gy@bsky.brid.gy
+npm run follow -- --server=stefanbohacek.online --account=@bsky.brid.gy@bsky.brid.gy --skip=dedication_bot,southpoleviews,trains,rain,nycviewsbot,wikipediatopedits
+npm run unfollow -- --server=stefanbohacek.online --account=@bsky.brid.gy@bsky.brid.gy 
 ```
 ### Mass-block a specific account
 
@@ -87,5 +97,11 @@ npm run block -- --server=stefanbohacek.online --account=@badguy@fediverse.socia
 Note: This feature is experimental and currently works only if the status you're boosting is on the same server as all your bots.
 
 ```sh
-npm run announce -- --status=https://stefanbohacek.online/@stefan/113516500422769407 --skip=botwikirandom,botwikirandomfediverse,newonbotwiki
+npm run announce -- --status=https://stefanbohacek.online/@stefan/113716686966076876 --skip=botwikirandom,botwikirandomfediverse,newonbotwiki,mastodon_mobile_apps,mastodonroadmap,mastodonmilestoneprogress,curator_machine,primestamp,what_capital,mtaupdates,happynameday,happymoonbot,wikipediatopedits
+```
+
+### Purge posts (Work in progress)
+
+```sh
+npm run purge -- --account=mtaupdates --server=stefanbohacek.online --skip=POSTID1,POSTID2
 ```
