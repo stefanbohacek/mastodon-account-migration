@@ -1,5 +1,22 @@
 # Mastodon Account Migration Tool
 
+This migration tool is very much work in progress and was initially set up to help me with [migrating my creative bots from botsin.space](https://stefanbohacek.com/blog/migrating-50-accounts-across-the-fediverse/). Be sure to open an issue or [reach out to me directly](https://stefanbohacek.com/contact/) if you have any questions, or things are not working for you.
+
+## Overview
+
+Here's a quick overview of what the migration script does:
+
+- Log into your "from" server using account details saved in the `accounts.csv` file (see instructions below).
+- Copy description, avatar, header image, and custom fields from the old account.
+- Marks the new account as automated.
+- Sets up account migration on the "Account migration" settings account.
+- Creates a new app with "write" permission.
+- Optionally sets up automatic post deletion. (See `delete_old_posts` option below.)
+
+Note that this script will not migrate your posts, as this is [not something that Mastodon currently supports](https://github.com/mastodon/mastodon/issues/12423).
+
+## Full walkthrough of how to use the script
+
 1. Register accounts on the new server for each of the accounts you're migrating. If you're an admin of the server to which you're migrating, you can use the [tootctl](https://docs.joinmastodon.org/admin/tootctl/) command line tool to create the account, and also approve it.
 
 ```sh
