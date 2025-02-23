@@ -18,7 +18,7 @@ export default async (account, options) => {
     await page.locator("#user_email").fill(account[1]);
     await page.locator("#user_password").fill(account[3]);
     await page.locator(".actions button[type='submit']").click();
-    await page.locator("[title='Preferences']").waitHandle();
+    await page.locator("[href='/settings/preferences']").waitHandle();
 
     if (!account[4]) {
       const accountData = await getAccountInfo(account, options.from);
@@ -133,7 +133,7 @@ export default async (account, options) => {
       await page.locator("#user_email").fill(account[1]);
       await page.locator("#user_password").fill(account[2]);
       await page.locator(".actions button[type='submit']").click();
-      await page.locator("[title='Preferences']").waitHandle();
+      await page.locator("[href='/settings/preferences']").waitHandle();
 
       console.log(`opening https://${options.from}/settings/migration`);
 
