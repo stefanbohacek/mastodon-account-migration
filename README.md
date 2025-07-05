@@ -91,6 +91,12 @@ To customize these options, look for `if (options.delete_old_posts)` inside the 
 
 ## Extras
 
+### Update custom fields
+
+```sh
+npm run update_fields -- --server=stefanbohacek.online
+```
+
 ### Request archive for your migrated bots
 
 ```sh

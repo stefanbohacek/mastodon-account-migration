@@ -30,6 +30,8 @@
     "block": "node ./scripts/block.js",
     "announce": "node ./scripts/announce.js",
     "request_archive": "node ./scripts/requestArchive.js",
+    "update_discovery": "node ./scripts/updateDiscovery.js",
+    "update_fields": "node ./scripts/updateFields.js",
     "purge": "node ./scripts/purge.js",
     "dev": "",
     "test": ""
